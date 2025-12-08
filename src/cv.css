@@ -1,0 +1,285 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Page */
+.cv-page {
+  background: #f3f4f6;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.cv-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 24px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.cv-actions {
+  max-width: 900px;
+  margin: 0 auto 12px auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.print-button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #0c4a6e;
+  color: #ffffff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.print-button:hover {
+  background: #075985;
+}
+
+/* Cartouche bleu en en-tête */
+.cv-header-box {
+  width: calc(100% + 80px);
+  margin-left: -40px;
+  margin-right: -40px;
+
+  margin-top: -24px;
+
+  background: #4389bb;
+  padding: 24px 40px;
+  border-radius: 12px 12px 0 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Nom + titre */
+.cv-name {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #ffffff;
+}
+
+.cv-title {
+  margin-top: 6px;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Contact à droite */
+.cv-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.cv-header-icons-text {
+  gap: 12px 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+
+.info-text {
+  color: white;
+  font-size: 0.95rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.info-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.cv-header-icons-only{
+  display: flex;
+  flex-direction: column;
+}
+.icon-only img{
+  gap: 12px 10px;
+
+  justify-items: center;
+  align-items: center;
+  margin-right: -6px;
+  margin-left: -6px;
+  justify-items: center;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.icon-only img:hover {
+  transform: scale(1.15);
+}
+
+
+.cv-header-right a {
+  color: #0ea5e9;
+  text-decoration: none;
+}
+
+.cv-header-right a:hover {
+  text-decoration: underline;
+}
+
+/* --- SECTIONS --- */
+.cv-main {
+  margin-top: 8px;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 10px;
+  padding-bottom: 3px;
+}
+
+.cv-main p,
+.cv-main li {
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+/* Grille compétences */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+/* Métadonnées expérience / formation */
+.experience-meta,
+.education-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.experience-meta span::after,
+.education-meta span::after {
+  content: "•";
+  margin: 0 6px;
+}
+
+.experience-meta span:last-child::after,
+.education-meta span:last-child::after {
+  content: "";
+  margin: 0;
+}
+
+.cv-main ul {
+  margin-left: 20px;
+}
+
+/* Impression propre pour PDF */
+@media print {
+
+  .cv-actions,
+  .print-button {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  .cv-page {
+    background: white;
+    padding: 0;
+  }
+
+  .cv-container {
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .cv-header-box {
+    border-radius: 0;
+    margin-top: 0;
+  }
+}
+
+/* Carte pour chaque grande section */
+.section-card {
+  background: #f9fafb;              /* léger gris très clair */
+  border: 1px solid #e5e7eb;        /* fine bordure */
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+/* titre à l’intérieur des boîtes */
+.section-card .section-title {
+  border-bottom: 1px solid #e5e7eb;
+  margin: 0 0 10px;
+  padding-bottom: 4px;
+}
+
+/* petit ajustement pour ne pas trop coller les textes aux bords */
+.section-card p,
+.section-card ul {
+  margin-bottom: 6px;
+}
+
+.cv-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+/* Lien complet : icône + texte cliquables */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #0c4a6e;
+  font-size: 0.9rem;
+}
+
+/* Icônes */
+.contact-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Effet au survol : souligne le texte uniquement */
+.contact-item:hover span {
+  text-decoration: underline;
+}
