@@ -14,7 +14,7 @@ const ExperienceItem = ({ title, company, location, start, end, bullets }) => (
         <span className="experience-company">{company}</span>
         <span className="experience-location">{location}</span>
         <span className="experience-dates">
-          {start} – {end}
+            {start}{end ? ` – ${end}` : ""}
         </span>
       </div>
     </header>
@@ -34,7 +34,7 @@ const EducationItem = ({ degree, school, location, start, end, bullets }) => (
         <span className="education-school">{school}</span>
         <span className="education-location">{location}</span>
         <span className="education-dates">
-          {start} – {end}
+            {start}{end ? ` – ${end}` : ""}
         </span>
       </div>
     </header>
@@ -96,7 +96,7 @@ const handleDownloadPDF = () => {
         <header className="cv-header-box">
           <div>
             <h1 className="cv-name">Adrien Sanches</h1>
-            <p className="cv-title">Consultant Cybersécurité</p>
+            <p className="cv-title">Analyste Cybersécurité (SOC / Sécurité opérationnelle)</p>
           </div>
 
           {/* CONTACT AVEC ICONES CLIQUABLES */}
@@ -144,10 +144,13 @@ const handleDownloadPDF = () => {
           <section className="section-card" aria-label="Profil">
             <SectionTitle>Profil</SectionTitle>
             <p>
-              Diplômé d’un Bac+5 en informatique spécialité cybersécurité et doté d’un an d’expérience professionnelle,
-              je possède un large panel de compétences technique couvrant la sécurité, le développement et l’administration réseau. Polyvalent et rigoureux,
-              j’interviens sur le durcissement, l’audit, le développement et le maintien en conditions de sécurité d’infrastructures, de logiciel et de sites web,
-              afin de garantir leur disponibilité, leur confidentialité et leur intégrité. 
+              Analyste cybersécurité junior spécialisé en sécurité opérationnelle et analyse réseau.
+              Expérience en audit de sécurité, analyse de trafic, investigation Active Directory et
+              détection de vulnérabilités applicatives.
+              À l’aise à l’écrit comme à l’oral, avec une pratique régulière de la rédaction de livrables
+              et de la vulgarisation de sujets cybersécurité.
+              Habitué aux environnements professionnels sensibles (banque, défense), rigoureux,
+              adaptable et orienté vers l'amélioration continue de la sécurité des systèmes d’information.
             </p>
           </section>
 
@@ -155,31 +158,30 @@ const handleDownloadPDF = () => {
             <SectionTitle>Compétences</SectionTitle>
             <div className="skills-grid">
               <div>
-                <h3>Techniques</h3>
+                <h3>Sécurité opérationnelle</h3>
                 <ul>
-                  <li>Réseau, TCP/UDP, HTTP, Kerberos, CISCO</li>
-                  <li>Python, JS, PHP, C, C#, Cobol</li>
-                  <li>Linux (Kali, Ubuntu, Exegol), Active Directory</li>
-                  <li>OSINT, Stéganographie, Cryptanalyse</li>
+                  <li>Analyse de trafic réseau</li>
+                  <li>Investigation Active Directory</li>
+                  <li>Identification de vulnérabilités et durcissement d’infrastructures</li>
+                  <li>Outils : Wireshark, Bloodhound, Metasploit</li>
                 </ul>
               </div>
+
               <div>
-                <h3>Outils</h3>
+                <h3>Sécurité applicative</h3>
                 <ul>
-                  <li>Burp Suite, SQLMap, Nikto, Owasp ZAP</li>
-                  <li>Wireshark, Bloodhound</li>
-                  <li>Hashcat, John the Ripper</li>
-                  <li>Git, Docker, Kubernetes</li>
+                  <li>Tests d’intrusion web</li>
+                  <li>Analyse de failles</li>
+                  <li>Outils : Burp Suite, OWASP ZAP, John the Ripper, Hashcat, SQLMap, Nikto</li>
                 </ul>
               </div>
+
               <div>
-                <h3>Soft skills</h3>
+                <h3>Environnements & systèmes</h3>
                 <ul>
-                  <li>Adaptabilité</li>
-                  <li>A l'écoute des autres</li>
-                  <li>Autonomie</li>
-                  <li>Aisanse écrite</li>
-                  <li>Sensibilité émotionnelle</li>
+                  <li>Linux (Kali, Exegol, Raspberry Pi), Windows Server</li>
+                  <li>Protocoles TCP/UDP, HTTP(S), Kerberos</li>
+                  <li>Bonnes bases en Python, C, C#, PHP et SQL</li>
                 </ul>
               </div>
             </div>
@@ -198,9 +200,9 @@ const handleDownloadPDF = () => {
               start="2024"
               end="2025"
               bullets={[
-                "Prestation chez Euro-Information (groupe Crédit Mutuel)",
-                "Développement d'applications en C# et Oracle",
-                "Gestion de flux interbancaire",
+                "Mission en environnement bancaire (Euro-Information, Crédit Mutuel)",
+                "Développement applicatif en prenant en compte les contraintes de sécurité et de conformité",
+                "Gestion de flux interbancaires critiques et données sensibles",
               ]}
             />
 
@@ -210,9 +212,9 @@ const handleDownloadPDF = () => {
               location="Base Navale Toulon"
               start="2023"
               bullets={[
-                "Laravel, PostgreSQL, Apache Superset",
-                "Traitement de données confidentielles et sensible",
-                "Création appilcation web pour convertir un fichier Excel en infographie",
+                "Utilisation des technologies Laravel, PostgreSQL et Apache Superset",
+                "Développement d'une application interne dans un environnement institutionnel",
+                "Manipulation de données en diffusion restreinte",
               ]}
             />
 
@@ -223,8 +225,9 @@ const handleDownloadPDF = () => {
               start="2022"
               end="2023"
               bullets={[
-                "Conception et création d'une architecture réseau complète",
-                "Mise en place sécurisation réseau (Segmentation, Pare Feu, Honeypot)",
+                "Conception et déploiement d’une architecture réseau sécurisée",
+                "Segmentation réseau, règles de pare-feu, mise en place de honeypots et de portails captifs",
+                "Réduction de la surface d’attaque et détection d’activités malveillantes",
               ]}
             />  
 
@@ -234,8 +237,13 @@ const handleDownloadPDF = () => {
               location="Paris"
               start="2021"
               bullets={[
-                "Réalisation d'un audit de sécurité complet du logiciel en développement",
+                "Réalisation d'un audit de sécurité complet du logiciel en cours de développement",
+                "Analyse de l’architecture applicative et des flux afin d’identifier des points de vigilance",
                 "Etude et mise en place de solutions d'amélioration du réseau de l'entreprise",
+                "Rédaction de livrables d’audit et restitution des constats aux équipes techniques",
+                "Rédaction d’un guide de sensibilisation à la cybersécurité destiné à des profils non techniques",
+                "Vulgarisation des risques numériques et des bonnes pratiques de sécurité",
+
               ]}
             />
           </section>
@@ -243,13 +251,14 @@ const handleDownloadPDF = () => {
           <section className="section-card" aria-label="Formation">
             <SectionTitle>Formation</SectionTitle>
             <EducationItem
-              degree="Realisation de challenge et CTF autodidacte"
-              school="Root-Me"
+              degree="Realisation de challenge et CTF en autodidacte"
+              school="Root-Me/Hack The Box"
               location="Remote"
               start="2025"
                 bullets={[
-                "Participation à divers CTF dans l'année",
-                "Réalisation de challenges sur le thème de la cybersécurité (1010 points)",
+                "Participation à divers CTF orientés sécurité offensive et défensive",
+                "Exploitation de vulnérabilités web, réseau et système",
+                "Score actuel : 1010 points",
               ]}
             />
 
@@ -259,13 +268,14 @@ const handleDownloadPDF = () => {
               location="Noisy le Grand"
               start="2024"
                 bullets={[
-                "Analyse et développement sur véritable mainframe",
-                "Création et gestion base de données sur mainframe",
+                "Formation au développement sur environnement mainframe réel",
+                "Découverte d’environnements informatiques à forte criticité",
+                "Travail dans un cadre procédural strict et normé",
               ]}
             />
 
             <EducationItem
-              degree="Master Expert Informaituqe et Systèmes d'Information"
+              degree="Master Expert Informatique et Systèmes d'Information"
               school="Ynov Informatique Ingesup"
               location="Nanterre"
               start="2019"
@@ -273,7 +283,7 @@ const handleDownloadPDF = () => {
                 bullets={[
                 "Titre RNCP niveau 7 enregistré à France Compétences",
                 "Formation généraliste d'informatique sur les deux premières années",
-                "Spécialisation cybersécurité, mise en place audit, pentest et gouvernance",
+                "Spécialisation cybersécurité, mise en place d’audits, de pentests et de gouvernance",
               ]}
             />
           </section>
@@ -291,7 +301,7 @@ const handleDownloadPDF = () => {
           <section className="section-card" aria-label="Centres d'intérêt">
             <SectionTitle>Centres d’intérêt</SectionTitle>
             <p>
-              Voyages culturels, Musique, Series et films en VO, Soin animalier, Jeu vidéo compétitif, Jeux de cartes
+              Voyages culturels, musique, séries et films en VO, soin animalier, jeu vidéo compétitif, jeux de cartes
             </p>
           </section>
         </main>
